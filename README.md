@@ -18,6 +18,8 @@ Data is organized into pandas dataframes.
 
 ### Trial Data
 
+Trial data represents the stimulus playback and behavioral response data for all trials and subjects. Data has been cleaned to remove trials triggered erroneously due to hardware issues (e.g. peck double registering due to button sensitivity, button getting stuck in the down position).
+
 | Column Name | Data Type | Description |
 |-------------|-----------|-------------|
 |Subject      |String     |             |
