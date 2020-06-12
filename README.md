@@ -41,19 +41,19 @@ Data is organized into pandas dataframes.
 |Week 1 / Week 2      |SovsSo_1v1       | 1 song | 1 song |  |
 |      |SovsSo_4v4       | 4 songs (3 new) | 4 songs (3 new) | |
 |      |SovsSo_8v8_d1    | 8 songs (4 new) | 8 songs (4 new) | New vocalizers played twice as frequently |
-|      |SovsSo_8v8_d2    | 8 songs (equal frequency) | 8 songs | All vocalizers played at equal frequency |
+|      |SovsSo_8v8_d2    | 8 songs | 8 songs | All vocalizers played at equal frequency |
 |      |DCvsDC_1v1       | 1 dc | 1 dc | |
 |      |DCvsDC_4v4       | 4 dcs (3 new) | 4 dcs (3 new) | |
 |      |DCvsDC_6v6_d1    | 6 dcs (2 new) | 6 dc (2 new) | New vocalizers played twice as frequently |
-|      |DCvsDC_6v6_d2    | 6 dcs (2 new) | 6 dc (2 new) | All vocalizers played at equal frequency |
+|      |DCvsDC_6v6_d2    | 6 dcs | 6 dcs | All vocalizers played at equal frequency |
 |Week 3 / Week 4|SovsSo_1v1_S2       | 1 song | 1 song |  |
 |      |SovsSo_4v4_S2       | 4 songs (3 new) | 4 songs (3 new) | |
 |      |SovsSo_8v8_d1_S2    | 8 songs (4 new) | 8 songs (4 new) | New vocalizers played twice as frequently |
-|      |SovsSo_8v8_d2_S2    | 8 songs (equal frequency) | 8 songs | All vocalizers played at equal frequency |
+|      |SovsSo_8v8_d2_S2    | 8 songs | 8 songs | All vocalizers played at equal frequency |
 |      |DCvsDC_1v1_S2       | 1 dc | 1 dc | |
 |      |DCvsDC_4v4_S2       | 4 dcs (3 new) | 4 dcs (3 new) | |
 |      |DCvsDC_6v6_d1_S2    | 6 dcs (2 new) | 6 dc (2 new) | New vocalizers played twice as frequently |
-|      |DCvsDC_6v6_d2_S2    | 6 dcs (2 new) | 6 dc (2 new) | All vocalizers played at equal frequency |
+|      |DCvsDC_6v6_d2_S2    | 6 dcs | 6 dcs | All vocalizers played at equal frequency |
 |Week 5|DCvsDC_12v12     | 12 dcs | 12 dcs | Combined stimuli from DCvsDC_6v6_d2 and DCvsDC_6v6_d2_S2 |
 |      |SovsSo_16v16     | 16 songs | 16 songs | Combined stimuli from SovsSo_8v8_d2 and SovsSo_8v8_d2_S2 |
 |Week 6|AllvsAll_4v4     | 2 songs + 2 dcs | 2 songs + 2 dcs | All vocalizers previously learned in earlier sets (refreshed set) |
