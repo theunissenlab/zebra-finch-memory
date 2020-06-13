@@ -28,7 +28,7 @@ Trial data represents the stimulus playback and behavioral response data for all
 |Date         |Date       |             |
 |Interrupt    |Boolean    |True if subject pecked to interrupt playback|
 |RT           |Float      |Response time (in seconds)|
-|Stimulus File |String           |Path to stimulus wav file|
+|Stimulus File |String           |Name of stimulus wav file|
 |Stimulus Vocalizer | String    | Name of vocalizing subject |
 |Stimulus Call Type | String    | Call type (SO or DC) |
 |Stimulus Class        |String     |"Rewarded" or "Unrewarded"|
@@ -64,4 +64,8 @@ Trial data represents the stimulus playback and behavioral response data for all
 
 ### Stimulus Files
 
-Stimulus .wav files are organized in a directory structure with folders for each of the tests defined in the Test Context table. Paths in the Trial Data reference directories relative to the top level of the `stimuli` folder.
+Stimulus .wav files are saved in a zip folder. Paths in the Trial Data reference directories relative to the top level of the `stimuli` folder.
+
+Filenames are formatted with the following convention:
+`CALLTYPE_Stim_RENDITION_VOCALIZER_RENDITIONID_norm[_COPY].wav`
+
