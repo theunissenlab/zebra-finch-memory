@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
 
 
-def color_by_reward(object):
+class color_by_reward(object):
     @staticmethod
     def get(x):
         if "Rewarded" in x:
@@ -21,6 +23,9 @@ def plot_data(
         figsize=None
     ):
 
+    # Reindex the dataframe for plotting
+    original_index = df.index
+    df.index = pd.Series(np.arange(len(df)))
     groupings = list(df.groupby(grouping))
 
     n_categories = len(groupings)
@@ -54,7 +59,7 @@ def plot_data(
 
         # Plot event tick marks
         scatter_plot = events_ax.scatter(
-            group_df["Time"],
+            group_df.index,
             (
                 ((1 * interrupted) + (2 * tick_height * increment_direction)) +  # tick base position
                 increment_direction * tick_height * group_idx                    # offset each group
@@ -71,7 +76,7 @@ def plot_data(
         # Plot a line showing windowed probability of interruption
         win_size=20
         win_size_half = win_size // 2
-        rolled = group_df["Interrupt"].rolling(win_Size, center=True).mean()
+        rolled = group_df["Interrupt"].rolling(win_size, center=True).mean()
 
         # Fill in nans at beginning/end by the first/last value
         if len(rolled) > win_size_half:
@@ -115,9 +120,11 @@ def plot_data(
     prob_ax.spines['left'].set_visible(False)
 
     # Label tick marks
-    events_ax.text(0, 1 + (2 * tick_height) + tick_height * 0.5 * n_categories, "Int.  ", fontsize=16, horizontalalignment="right    ", verticalalignment="center")
-    events_ax.text(0, -(2 * tick_height) - tick_height * 0.5 * n_categories, "Wait  ",  fontsize=16, horizontalalignment="right",     verticalalignment="center")
+    events_ax.text(0, 1 + (2 * tick_height) + tick_height * 0.5 * n_categories, "Int.  ", fontsize=16, horizontalalignment="right", verticalalignment="center")
+    events_ax.text(0, -(2 * tick_height) - tick_height * 0.5 * n_categories, "Wait  ",  fontsize=16, horizontalalignment="right", verticalalignment="center")
 
     events_ax.vlines(x=0, ymin=0, ymax=1, color='black', linewidth=2)
+
+    df.index = original_index
 
     return fig

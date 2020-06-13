@@ -8,4 +8,4 @@ DATADIR = os.path.join(CODEDIR, "..")
 
 
 def load_data():
-    return pd.read_csv(os.path.join(DATADIR, "TrialsData.csv"))
+    return pd.read_csv(os.path.join(DATADIR, "TrialData.csv"))
