@@ -69,3 +69,8 @@ Stimulus .wav files are saved in a zip folder. Paths in the Trial Data reference
 Filenames are formatted with the following convention:
 `CALLTYPE_Stim_RENDITION_VOCALIZER_RENDITIONID_norm[_COPY].wav`
 
+## Code
+
+### Dependencies
+
+Code is run and tested on Python3.6, using requirements listed in requirements.txt (install with `pip install -r requirements.txt`). A local installation of R is required for statistical functions and installation of `rpy2` library.
