@@ -58,7 +58,7 @@ Trial data represents the stimulus playback and behavioral response data for all
 |      |DCvsDC_6v6_d2_S2    | 6 dcs | 6 dcs | All vocalizers played at equal frequency |
 |Week 5|DCvsDC_12v12     | 12 dcs | 12 dcs | Combined stimuli from DCvsDC_6v6_d2 and DCvsDC_6v6_d2_S2 |
 |      |SovsSo_16v16     | 16 songs | 16 songs | Combined stimuli from SovsSo_8v8_d2 and SovsSo_8v8_d2_S2 |
-|Week 6|AllvsAll_4v4     | 2 songs + 2 dcs | 2 songs + 2 dcs | All vocalizers previously learned in earlier sets (refreshed set) |
+|Week 6|AllvsAll_4v4     | 2 songs + 2 dcs | 2 songs + 2 dcs | All vocalizers previously learned in earlier sets (refresher set) |
 |      |AllvsAll_28v28     | 16 songs + 12 dcs | 16 songs + 12 dcs | Combined stimuli from DCvsDC_12v12 and SovsSo_16v16 |
 
 
