@@ -12,7 +12,7 @@ Data is organized into pandas dataframes.
 
 * Stimulus Files: WAV files played as stimuli during the test, referenced by Trial Data
 
-* Stimulus File Metadata: ?
+* Stimulus File Metadata: Sex, Age, Lab recorded from?
 
 ### Subject Data
 
