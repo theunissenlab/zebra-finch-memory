@@ -128,3 +128,42 @@ def plot_data(
     df.index = original_index
 
     return fig
+
+
+def set_oddsratio_yticks(ax, biggest, smallest=None):
+    """Determine and set the yticks of an axis given the data range
+
+    Generates a pleasant set of ytick labels and spacing for a given
+    range of odds ratios.
+
+    Typecasts the y values into multiples (e.g. x1, x2, x4, etc) when the
+    odds ratio is > 1 or as fractions when the odds ratio is less than 1
+    (e.g. x1/2, x1/4, etc).
+
+    It ensures that:
+    * only powers of 2 are shown
+    * y=1 is always labeled
+    * there is a maximum of 5 y-values labeld
+    """
+    if not smallest:
+        smallest = -biggest
+    if smallest >= -1:
+        smallest = -1
+
+    ax.set_yscale("log")
+
+    abs_biggest = max(np.abs(smallest), np.abs(biggest))
+
+    powers = np.arange(0, abs_biggest + 1)
+    n = len(powers)
+    powers = powers[::n // 6 + 1]
+    vals = np.concatenate([-powers, powers[1:]])
+
+    ticks = np.power(2., vals)
+    labels = [r"x{:d}".format(int(2 ** v)) if v >= 0 else r"x1/{:d}".format(int(2 ** -v)) for v in vals]
+
+    ax.set_ylabel("Odds Ratio", fontsize=16)
+    ax.set_yticks(ticks)
+    ax.set_yticklabels(labels, fontsize=16)
+    ax.hlines(1, *plt.xlim(), linestyle="--", zorder=-1)
+    ax.set_ylim(np.power(2., smallest), np.power(2., biggest))
