@@ -36,6 +36,8 @@ Trial data represents the stimulus playback and behavioral response data for all
 |Informative Trials Seen |Integer |Number of times that a stimulus from this vocalizer had previously been uninterrupted| 
 |Test Context |String     | Test context (references Test Context table) |
 |Condition    |String     | Normally NaN, but for some tests that occured after a month without reinforcement, indicated by "MonthLater" |
+|Subject Sex    |String     | "M" or "F" |
+
 
 ### Test Context
 
