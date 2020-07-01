@@ -41,6 +41,8 @@ Trial data represents the stimulus playback and behavioral response data for all
 
 ### Test Context
 
+Test contexts are referenced in the `Test Context` column of `TrialData.csv` and indicate what stage of the learning ladder the subject was on.
+
 |Ladder| Test Name   |  # Rewarded Vocalizers |  # Non-rewarded Vocalizers  | Description |
 |------|-------------|-----------|-------------|---|
 |Week 1 / Week 2      |SovsSo_1v1       | 1 song | 1 song |  |
