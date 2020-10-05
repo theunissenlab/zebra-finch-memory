@@ -12,9 +12,30 @@ Data is organized into pandas dataframes.
 
 * Stimulus Files: WAV files played as stimuli during the test, referenced by Trial Data
 
-* Stimulus File Metadata: Sex, Age
-
 ### Subject Data
+
+| Subject Name | Sex |
+|--------------|---|
+|GreBla5671F   | F |
+|GreBla7410M   | M |
+|WhiRed9510F   | F |
+|RedBla0907M   | M |
+|XXXOra0037F   | F |
+|HpiBlu6194F   | F |
+|YelPur7906M   | M |
+|WhiWhi2526M   | M |
+|BluYel2571F   | F |
+|YelRed3010F   | F |
+|GraWhi4040F   | F |
+|BlaGre1349M   | M |
+|XXXHpi0038M   | M |
+|GreBlu5039F   | F |
+|GreBla3404M   | M |
+|XXXRed0088M   | M |
+|XXXOra0039F   | F |
+|XXXBla0054F   | F |
+|XXXBla0055M   | M |
+|XXXBla0081M   | M |
 
 ### Trial Data
 
