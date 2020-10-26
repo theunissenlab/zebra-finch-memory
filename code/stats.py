@@ -3,9 +3,13 @@ import numpy as np
 from scipy.stats import hypergeom
 from scipy.optimize import curve_fit
 
-import rpy2.robjects as robjects
-from rpy2.robjects.packages import importr
-stats = importr('stats')
+
+try:
+    import rpy2.robjects as robjects
+    from rpy2.robjects.packages import importr
+    stats = importr('stats')
+except:
+    pass
 
 
 def false_discovery(pvalues, alpha=0.05):
@@ -46,8 +50,6 @@ def fisher_exact(table, side="two.sided", zero_correction=True):
     Output is almost exactly the same as scipy.stats.fisher_exact but here allows for
     using Haldane–Anscombe correction (substitutes 0.5 for 0 values in the table, whereas
     the scipy.stats version and R version fisher.test use integers only).
-    
-    For 95% confidence interval, uses confidence intervals computed by R function fisher.test
     """
     if side not in ("greater", "less", "two.sided"):
         raise ValueError("side parameter must be one of 'greater', 'less', or 'two.sided'")
@@ -120,15 +122,24 @@ def jackknife(samples, estimator):
     Returns estimate of standard error of estimator
     """
     jk_n = []
-    for i in range(len(samples)):
-        jk_n.append(estimator(np.concatenate([samples[:i], samples[i + 1:]])))
-    
-    jk_n = np.array(jk_n)
-    jk_all = estimator(np.array(samples))
     n = len(samples)
 
-    se = np.sqrt(((n - 1) / n) * np.sum((jk_n - jk_all) ** 2))
-    return se
+    # Compute the value of estimator over all n samples
+    jk_all = estimator(np.array(samples))
+
+    # Compute value of estimator for each combination of n-1 samples
+    for i in range(n):
+        jk_n.append(estimator(np.concatenate([samples[:i], samples[i + 1:]])))
+    jk_n = np.array(jk_n)
+
+    # Compute pseudo values for samples (in n -> inf limit)
+    jk_pseudo_values = [(n * jk_all - (n - 1) * jk_n[i]) for i in range(n)]
+
+    est_mean = np.mean(jk_pseudo_values)
+    est_var = (1 / n) * np.var(jk_pseudo_values)
+    est_sem = np.sqrt(est_var)
+
+    return est_mean, est_sem
 
 
 def get_odds_ratio_matrix(group1, group2, key):
