@@ -90,7 +90,7 @@ Test contexts are referenced in the `Test Context` column of `TrialData.csv` and
 
 ### Stimulus Files
 
-Stimulus .wav files are saved in a zip folder. Paths in the Trial Data reference directories relative to the top level of the `stimuli` folder.
+Stimulus .wav files are saved in a zip folder, the [download is available on Google Drive](https://drive.google.com/drive/folders/1PQ2RQrnqyPdHBW0-3l0BB4f9Y_9NoOQp?usp=sharing). Paths in the Trial Data reference directories relative to the top level of the `stimuli` folder.
 
 Filenames are formatted with the following convention:
 `CALLTYPE_Stim_RENDITION_VOCALIZER_RENDITIONID_norm[_COPY].wav`
